@@ -3,6 +3,9 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://favicon-generator.vercel.app'),
+  alternates: {
+    canonical: 'https://favicon-generator.vercel.app',
+  },
   title: 'Favicon Generator — Create Favicons | Free Online Tool',
   description: 'Generate favicons from text or images. Create ICO, PNG favicons for your website.',
   keywords: ['favicon generator', 'favicon maker', 'create favicon', 'favicon creator'],
