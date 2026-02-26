@@ -71,6 +71,18 @@ export default function Home() {
 
       <main className="flex-1 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         <div className="bg-white rounded-2xl border border-slate-200 shadow-lg p-6 md:p-8">
+          
+          {/* Live Preview */}
+          <div className="mb-8 text-center">
+            <div 
+              className="w-32 h-32 mx-auto rounded-2xl shadow-lg mb-4 flex items-center justify-center text-4xl font-bold transition-all duration-300"
+              style={{ backgroundColor: bgColor, color: textColor, fontSize: `${fontSize * 0.5}px` }}
+            >
+              {text || 'A'}
+            </div>
+            <p className="text-sm text-slate-500">Live Preview</p>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">Text (1-2 characters)</label>
@@ -78,7 +90,7 @@ export default function Home() {
                 type="text"
                 value={text}
                 onChange={(e) => setText(e.target.value.slice(0, 2))}
-                className="input text-center text-2xl font-bold uppercase"
+                className="w-full px-4 py-3 rounded-xl border border-slate-300 text-center text-2xl font-bold uppercase shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
                 maxLength={2}
               />
             </div>
@@ -90,58 +102,68 @@ export default function Home() {
                 onChange={(e) => setFontSize(Number(e.target.value))}
                 min={32}
                 max={128}
-                className="input"
+                className="w-full px-4 py-3 rounded-xl border border-slate-300 shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
               />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">Background Color</label>
               <div className="flex gap-2">
-                <input
-                  type="color"
-                  value={bgColor}
-                  onChange={(e) => setBgColor(e.target.value)}
-                  className="w-12 h-11 rounded-lg border border-slate-300"
-                />
+                <div className="relative w-12 h-11 rounded-lg overflow-hidden border border-slate-300 shadow-sm">
+                  <input
+                    type="color"
+                    value={bgColor}
+                    onChange={(e) => setBgColor(e.target.value)}
+                    className="absolute -top-2 -left-2 w-16 h-16 cursor-pointer"
+                  />
+                </div>
                 <input
                   type="text"
                   value={bgColor}
                   onChange={(e) => setBgColor(e.target.value)}
-                  className="input flex-1"
+                  className="flex-1 px-4 py-3 rounded-xl border border-slate-300 font-mono uppercase shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
                 />
               </div>
             </div>
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">Text Color</label>
               <div className="flex gap-2">
-                <input
-                  type="color"
-                  value={textColor}
-                  onChange={(e) => setTextColor(e.target.value)}
-                  className="w-12 h-11 rounded-lg border border-slate-300"
-                />
+                <div className="relative w-12 h-11 rounded-lg overflow-hidden border border-slate-300 shadow-sm">
+                  <input
+                    type="color"
+                    value={textColor}
+                    onChange={(e) => setTextColor(e.target.value)}
+                    className="absolute -top-2 -left-2 w-16 h-16 cursor-pointer"
+                  />
+                </div>
                 <input
                   type="text"
                   value={textColor}
                   onChange={(e) => setTextColor(e.target.value)}
-                  className="input flex-1"
+                  className="flex-1 px-4 py-3 rounded-xl border border-slate-300 font-mono uppercase shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
                 />
               </div>
             </div>
           </div>
 
-          <button onClick={generateFavicon} className="w-full btn-primary bg-purple-600 hover:bg-purple-700 mb-6">
+          <button 
+            onClick={generateFavicon} 
+            className="w-full py-4 bg-gradient-to-br from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 mb-6"
+          >
             ✨ Generate Favicon
           </button>
 
           {faviconUrl && (
-            <div className="text-center">
+            <div className="text-center p-6 bg-slate-50 rounded-xl border border-slate-200">
               <div className="inline-block p-4 bg-white rounded-xl border border-slate-200 shadow-lg mb-4">
                 <img src={faviconUrl} alt="Favicon" className="w-32 h-32" />
               </div>
-              <button onClick={downloadFavicon} className="btn-primary bg-purple-600 hover:bg-purple-700">
+              <button 
+                onClick={downloadFavicon} 
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
+              >
                 💾 Download Favicon
               </button>
             </div>
