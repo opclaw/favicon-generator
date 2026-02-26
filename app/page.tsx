@@ -115,7 +115,8 @@ export default function Home() {
                   type="color"
                   value={bgColor}
                   onChange={(e) => setBgColor(e.target.value)}
-                  className="w-14 h-14 rounded-xl border-2 border-slate-200 cursor-pointer shadow-sm"
+                  className="w-14 h-14 rounded-xl border-2 border-slate-200 cursor-pointer shadow-sm appearance-none p-0 overflow-hidden"
+                  style={{ padding: 0 }}
                 />
                 <input
                   type="text"
@@ -132,7 +133,8 @@ export default function Home() {
                   type="color"
                   value={textColor}
                   onChange={(e) => setTextColor(e.target.value)}
-                  className="w-14 h-14 rounded-xl border-2 border-slate-200 cursor-pointer shadow-sm"
+                  className="w-14 h-14 rounded-xl border-2 border-slate-200 cursor-pointer shadow-sm appearance-none p-0 overflow-hidden"
+                  style={{ padding: 0 }}
                 />
                 <input
                   type="text"
