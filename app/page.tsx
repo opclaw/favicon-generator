@@ -83,14 +83,14 @@ export default function Home() {
             <p className="text-sm text-slate-500">Live Preview</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">Text (1-2 characters)</label>
               <input
                 type="text"
                 value={text}
                 onChange={(e) => setText(e.target.value.slice(0, 2))}
-                className="w-full px-4 py-3 rounded-xl border border-slate-300 text-center text-2xl font-bold uppercase shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
+                className="w-full h-14 px-4 rounded-xl border border-slate-300 text-center text-2xl font-bold uppercase shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
                 maxLength={2}
               />
             </div>
@@ -102,7 +102,7 @@ export default function Home() {
                 onChange={(e) => setFontSize(Number(e.target.value))}
                 min={32}
                 max={128}
-                className="w-full px-4 py-3 rounded-xl border border-slate-300 shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
+                className="w-full h-14 px-4 rounded-xl border border-slate-300 shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
               />
             </div>
           </div>
@@ -110,39 +110,35 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">Background Color</label>
-              <div className="flex gap-2">
-                <div className="relative w-12 h-11 rounded-lg overflow-hidden border border-slate-300 shadow-sm">
-                  <input
-                    type="color"
-                    value={bgColor}
-                    onChange={(e) => setBgColor(e.target.value)}
-                    className="absolute -top-2 -left-2 w-16 h-16 cursor-pointer"
-                  />
-                </div>
+              <div className="flex items-center gap-3">
+                <input
+                  type="color"
+                  value={bgColor}
+                  onChange={(e) => setBgColor(e.target.value)}
+                  className="w-14 h-14 rounded-xl border-2 border-slate-200 cursor-pointer shadow-sm"
+                />
                 <input
                   type="text"
                   value={bgColor}
                   onChange={(e) => setBgColor(e.target.value)}
-                  className="flex-1 px-4 py-3 rounded-xl border border-slate-300 font-mono uppercase shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
+                  className="flex-1 h-14 px-4 rounded-xl border border-slate-300 font-mono text-lg uppercase shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
                 />
               </div>
             </div>
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">Text Color</label>
-              <div className="flex gap-2">
-                <div className="relative w-12 h-11 rounded-lg overflow-hidden border border-slate-300 shadow-sm">
-                  <input
-                    type="color"
-                    value={textColor}
-                    onChange={(e) => setTextColor(e.target.value)}
-                    className="absolute -top-2 -left-2 w-16 h-16 cursor-pointer"
-                  />
-                </div>
+              <div className="flex items-center gap-3">
+                <input
+                  type="color"
+                  value={textColor}
+                  onChange={(e) => setTextColor(e.target.value)}
+                  className="w-14 h-14 rounded-xl border-2 border-slate-200 cursor-pointer shadow-sm"
+                />
                 <input
                   type="text"
                   value={textColor}
                   onChange={(e) => setTextColor(e.target.value)}
-                  className="flex-1 px-4 py-3 rounded-xl border border-slate-300 font-mono uppercase shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
+                  className="flex-1 h-14 px-4 rounded-xl border border-slate-300 font-mono text-lg uppercase shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
                 />
               </div>
             </div>
