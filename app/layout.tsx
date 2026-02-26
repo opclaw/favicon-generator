@@ -17,11 +17,20 @@ export const metadata: Metadata = {
     siteName: 'Favicon Generator',
     title: 'Favicon Generator — Create Favicons',
     description: 'Generate favicons from text or images.',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Favicon Generator',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Favicon Generator',
     description: 'Generate favicons from text or images.',
+    images: ['/og-image.svg'],
   },
   robots: { index: true, follow: true },
 }
