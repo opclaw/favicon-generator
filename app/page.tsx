@@ -111,13 +111,15 @@ export default function Home() {
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">Background Color</label>
               <div className="flex items-center gap-3">
-                <input
-                  type="color"
-                  value={bgColor}
-                  onChange={(e) => setBgColor(e.target.value)}
-                  className="w-14 h-14 rounded-xl border-2 border-slate-200 cursor-pointer shadow-sm appearance-none p-0 overflow-hidden"
-                  style={{ padding: 0 }}
-                />
+                <div className="w-14 h-14 rounded-xl border-2 border-slate-200 shadow-sm overflow-hidden flex-shrink-0">
+                  <input
+                    type="color"
+                    value={bgColor}
+                    onChange={(e) => setBgColor(e.target.value)}
+                    className="w-full h-full cursor-pointer border-0 p-0 m-0"
+                    style={{ padding: 0, margin: 0, border: 'none' }}
+                  />
+                </div>
                 <input
                   type="text"
                   value={bgColor}
@@ -129,13 +131,15 @@ export default function Home() {
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">Text Color</label>
               <div className="flex items-center gap-3">
-                <input
-                  type="color"
-                  value={textColor}
-                  onChange={(e) => setTextColor(e.target.value)}
-                  className="w-14 h-14 rounded-xl border-2 border-slate-200 cursor-pointer shadow-sm appearance-none p-0 overflow-hidden"
-                  style={{ padding: 0 }}
-                />
+                <div className="w-14 h-14 rounded-xl border-2 border-slate-200 shadow-sm overflow-hidden flex-shrink-0">
+                  <input
+                    type="color"
+                    value={textColor}
+                    onChange={(e) => setTextColor(e.target.value)}
+                    className="w-full h-full cursor-pointer border-0 p-0 m-0"
+                    style={{ padding: 0, margin: 0, border: 'none' }}
+                  />
+                </div>
                 <input
                   type="text"
                   value={textColor}
